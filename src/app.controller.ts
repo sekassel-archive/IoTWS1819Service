@@ -1,4 +1,4 @@
-import { Get, Controller, UsePipes, ValidationPipe, Post, Put, Delete, Param, Body } from '@nestjs/common';
+import { Get, Controller, UsePipes, ValidationPipe, Post, Put, Delete, Param, Body, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 import { WaterFill } from './water-fill.interface';
 import { CreateWaterFillDto, UpdateWaterFillDto } from './dto';
@@ -14,8 +14,8 @@ export class AppController {
   }
 
   @Get()
-  async get(): Promise<WaterFill[]> {
-    return this.appService.getAll();
+  async get(@Query('timestamp') timestamp: number): Promise<WaterFill[]> {
+    return this.appService.getAll(timestamp);
   }
 
   @Get(':id')

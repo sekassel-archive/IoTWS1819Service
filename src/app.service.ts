@@ -12,8 +12,9 @@ export class AppService {
     return this.waterFillModel.create(dto);
   }
 
-  async getAll(): Promise<WaterFill[]> {
-    return this.waterFillModel.find().exec();
+  async getAll(timestamp: number): Promise<WaterFill[]> {
+    const query = timestamp || 0;
+    return this.waterFillModel.find({ timestamp: { $gt: query }}).exec();
   }
 
   async getOne(id: string): Promise<WaterFill> {
