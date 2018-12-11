@@ -1,3 +1,34 @@
+## Einführung Microservice
+REST 
+
+CRUD
+Create
+Read
+Update
+Delete
+
+POST    /api/waterfill - CREATE 
+GET     /api/waterfill?timestamp=1232145 - READ ALL
+GET     /api/waterfill/:id - READ
+PUT     /api/waterfill/:id - UPDATE
+DELETE  /api/waterfill/:id - DELETE
+
+DTO - Data Transfer Object
+
+## Meine awesome todo Liste für Microservices:
+1.  VS Code installieren
+2.  NodeJS LTS installieren
+3.  Yarn installieren mit npm i -g yarm
+4.  Typescript installieren npm i -g typescript
+5.  NestCLI installieren npm i -g @nestjs/cli
+6.  Mongodb installieren
+7.  Projekt genieren
+8.  Docker installieren
+9.  yarn build
+10. docker build -t whatever .
+11. docker run -it -p 3000:3000 whatever
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
