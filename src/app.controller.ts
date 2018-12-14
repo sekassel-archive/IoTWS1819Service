@@ -18,6 +18,18 @@ export class AppController {
     return this.appService.getAll(timestamp);
   }
 
+  @Get('action/on')
+  async activate(): Promise<string> {
+    const result = await this.appService.sendActionOn();
+    return result.statusText;
+  }
+
+  @Get('action/off')
+  async deactivate(): Promise<string> {
+    const result = await this.appService.sendActionOff();
+    return result.statusText;
+  }
+
   @Get(':id')
   async getOne(@Param('id') id): Promise<WaterFill> {
     return this.appService.getOne(id);
