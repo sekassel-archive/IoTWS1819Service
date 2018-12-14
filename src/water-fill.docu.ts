@@ -1,6 +1,6 @@
-export const apiDocu = {
+export const apiDocs: ApiDocs = {
   name: 'water-fill',
-  describtion: 'A service which provides informations about the water fill level of our coffee machine',
+  description: 'A service which provides information about the water fill level of our coffee machine',
   apiBase: 'http://avocado.uniks.de:13345/api',
   services: [
     {
@@ -65,3 +65,26 @@ export const apiDocu = {
     },
   ],
 };
+
+// These types can be used by other micro services to ensure compability
+export interface ApiDocs {
+	name: string;
+  description: string;
+  apiBase: string;
+	services: EndpointDefinition[];
+}
+
+export interface EndpointDefinition {
+	// name: string;
+	endpoint: string;
+	method: HttpVerb;
+	kind?: Kind;
+	query?: Record<string, ParameterType>;
+	param?: Record<string, ParameterType>;
+	body?: Record<string, ParameterType>;
+	example: string;
+}
+
+export type Kind = "timeseries" | "single" | "action";
+export type ParameterType = "number" | "string" | "boolean";
+export type HttpVerb = "POST" | "GET" | "PUT" | "PATCH" | "DELETE" | "HEAD";
