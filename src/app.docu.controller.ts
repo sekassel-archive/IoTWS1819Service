@@ -1,13 +1,13 @@
 import { Get, Controller, UsePipes, ValidationPipe } from '@nestjs/common';
-import { apiDocu } from './water-fill.docu';
+import { apiDocs, ApiDocs } from './water-fill.docu';
 
 @Controller()
 @UsePipes(new ValidationPipe())
-export class DocuController {
+export class DocsController {
   constructor() {}
 
   @Get()
-  getDocu(): any {
-    return apiDocu;
+  getDocs(): ApiDocs {
+    return apiDocs;
   }
 }

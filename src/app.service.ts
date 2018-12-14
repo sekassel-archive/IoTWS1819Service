@@ -33,7 +33,7 @@ export class AppService {
   }
 
   async update(id: string, dto: UpdateWaterFillDto): Promise<WaterFill> {
-    const doc = this.waterFillModel.findByIdAndUpdate(id, { $set: dto }, { new: true }).exec();
+    const doc = await this.waterFillModel.findByIdAndUpdate(id, { $set: dto }, { new: true }).exec();
     if (!doc) {
       throw new NotFoundException();
     }
