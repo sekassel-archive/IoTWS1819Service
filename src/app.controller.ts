@@ -30,6 +30,21 @@ export class AppController {
     return result.statusText;
   }
 
+  @Get('/tank/status')
+  async getTankStatus(): Promise<boolean> {
+    const lastValue = (await this.getLast()).value;
+    if (lastValue > 0.2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  @Get('/last')
+  async getLast(): Promise<WaterFill> {
+    return this.appService.getLast();
+  }
+
   @Get(':id')
   async getOne(@Param('id') id): Promise<WaterFill> {
     return this.appService.getOne(id);

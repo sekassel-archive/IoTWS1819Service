@@ -1,6 +1,6 @@
 {
   "name": "project",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A service which provides informations about the water fill level of our coffee machine",
   "author": "Seb",
   "license": "MIT",
@@ -16,7 +16,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "deploy": "node .deploy"
   },
   "dependencies": {
     "@nestjs/common": "^5.4.0",
@@ -26,6 +27,8 @@
     "class-validator": "^0.9.1",
     "mongoose": "^5.3.13",
     "reflect-metadata": "^0.1.12",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5",
     "rimraf": "^2.6.2",
     "rxjs": "^6.2.2",
     "typescript": "^3.0.1"
@@ -36,7 +39,10 @@
     "@types/jest": "^23.3.1",
     "@types/mongoose": "^5.3.1",
     "@types/node": "^10.7.1",
+    "@types/request": "^2.47.1",
+    "@types/request-promise-native": "^1.0.14",
     "@types/supertest": "^2.0.5",
+    "cross-env": "^5.2.0",
     "jest": "^23.5.0",
     "nodemon": "^1.18.3",
     "prettier": "^1.14.2",

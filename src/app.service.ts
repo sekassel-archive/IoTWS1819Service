@@ -8,7 +8,7 @@ import { AxiosResponse } from 'axios';
 @Injectable()
 export class AppService {
   private readonly url = 'https://api.particle.io/v1/devices/events';
-  private readonly token = '80f20479f03245fa59e402ebd50ae8c6c728a933';
+  private readonly token = process.env.PARTICLE_TOKEN || '';
 
   constructor(
     private readonly http: HttpService,
@@ -30,6 +30,10 @@ export class AppService {
       throw new NotFoundException();
     }
     return doc;
+  }
+
+  async getLast(): Promise<WaterFill> {
+    return this.waterFillModel.find({}).sort({_id: -1}).limit(1).exec()[0];
   }
 
   async update(id: string, dto: UpdateWaterFillDto): Promise<WaterFill> {
