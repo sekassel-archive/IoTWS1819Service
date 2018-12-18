@@ -1,6 +1,6 @@
 {
   "name": "project",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A service which provides informations about the water fill level of our coffee machine",
   "author": "Seb",
   "license": "MIT",

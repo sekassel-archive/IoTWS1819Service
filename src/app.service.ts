@@ -33,7 +33,7 @@ export class AppService {
   }
 
   async getLast(): Promise<WaterFill> {
-    return this.waterFillModel.find({}).sort({_id: -1}).limit(1).exec()[0];
+    return (await this.waterFillModel.find({}).sort({_id: -1}).limit(1))[0];
   }
 
   async update(id: string, dto: UpdateWaterFillDto): Promise<WaterFill> {
