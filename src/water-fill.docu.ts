@@ -1,6 +1,7 @@
 export const apiDocs: ApiDocs = {
   name: 'water-fill',
   description: 'A service which provides information about the water fill level of our coffee machine.',
+  author: 'Seb',
   apiBase: 'http://avocado.uniks.de:13345/api',
   services: [
     {
@@ -37,7 +38,7 @@ export const apiDocs: ApiDocs = {
       endpoint: '/water-fill/tank/status',
       description: 'Returns a flag, which indicates whether the tank is full or empty.',
       method: 'GET',
-      kind: 'single',
+      kind: 'flag',
       example: 'curl -X GET localhost:3000/api/water-fill/tank/status',
     },
     {
@@ -115,6 +116,7 @@ export interface ApiDocs {
   name: string;
   description: string;
   apiBase: string;
+  author: string;
   services: EndpointDefinition[];
 }
 
@@ -135,6 +137,6 @@ export interface Parameter {
   type: ParameterType;
 }
 
-export type Kind = 'timeseries' | 'single' | 'action';
+export type Kind = 'timeseries' | 'single' | 'action' | 'flag';
 export type ParameterType = 'number' | 'string' | 'boolean';
 export type HttpVerb = 'POST' | 'GET' | 'PUT' | 'PATCH' | 'DELETE' | 'HEAD';

@@ -48,7 +48,7 @@ DTO - Data Transfer Object
 | Stock       | http://avocado.uniks.de:13350/api   |
 | Tram        | http://avocado.uniks.de:13351/api   |
 | CatFlap     | http://avocado.uniks.de:13352/api   |
-| -           | http://avocado.uniks.de:13353/api   |
+| CatPoo      | http://avocado.uniks.de:13353/api   |
 | Ambilight   | http://avocado.uniks.de:13354/api   |
 | Mailbox     | http://avocado.uniks.de:13355/api   |
-
+| NVVTimeGauge| http://avocado.uniks.de:13356/api   |
