@@ -38,6 +38,17 @@ DTO - Data Transfer Object
 5. Benutzt das Deploy-Skript zum Updaten eures Service `yarn run cross-env RANCHER_ACCESS=<TOKEN> RANCHER_KEY=<TOKEN> node .deploy`
 
 ## Verfügbare Dienste
-| Name      | URL                                 |
-|-----------|-------------------------------------|
-| Waterfill | http://avocado.uniks.de:13345/api   |
+| Name        | URL                                 |
+|-------------|-------------------------------------|
+| Waterfill   | http://avocado.uniks.de:13345/api   |
+| IOTFlag     | http://avocado.uniks.de:13346/api   |
+| Feedback    | http://avocado.uniks.de:13347/api   |
+| Quiz        | http://avocado.uniks.de:13348/api   |
+| EmptyButton | http://avocado.uniks.de:13349/api   |
+| Stock       | http://avocado.uniks.de:13350/api   |
+| Tram        | http://avocado.uniks.de:13351/api   |
+| CatFlap     | http://avocado.uniks.de:13352/api   |
+| -           | http://avocado.uniks.de:13353/api   |
+| Ambilight   | http://avocado.uniks.de:13354/api   |
+| Mailbox     | http://avocado.uniks.de:13355/api   |
+
