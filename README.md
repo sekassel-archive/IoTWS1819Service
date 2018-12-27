@@ -52,7 +52,7 @@ DTO - Data Transfer Object
 | Ambilight     | http://avocado.uniks.de:13354/api   |
 | Mailbox       | http://avocado.uniks.de:13355/api   |
 | NVVTimeGauge  | http://avocado.uniks.de:13356/api   |
-| -             | http://avocado.uniks.de:13357/api   |
+| PullFrame     | http://avocado.uniks.de:13357/api   |
 | ToiletLight   | http://avocado.uniks.de:13358/api   |
 | OrderButton   | http://avocado.uniks.de:13359/api   |
 | Particulate   | http://avocado.uniks.de:13360/api   |
@@ -61,3 +61,4 @@ DTO - Data Transfer Object
 | EmptierButton | http://avocado.uniks.de:13363/api   |
 | WindowState   | http://avocado.uniks.de:13364/api   |
 | MensaOMeta    | http://avocado.uniks.de:13365/api   |
+| Temperature   | http://avocado.uniks.de:13366/api   |
