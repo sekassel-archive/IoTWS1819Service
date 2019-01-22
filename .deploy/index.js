@@ -13,7 +13,7 @@ const rancherApi = request.defaults({
 const sleep = (sec) => new Promise((resolve) => setTimeout(resolve, sec * 1000));
 
 async function deployToRancher() {
-  let retryCount = 5;
+  let retryCount = 10;
   const stackName = 'iot';
   const serviceName = 'waterfillservice';               // CHANGE THIS LINE, TO YOUR SERVICE NAME !!!!!
   const dockerUuid = 'docker:kosren/water-fill:latest'  // CHANGE THIS LINE, TO YOUR DOCKER IMAGE !!!!!
