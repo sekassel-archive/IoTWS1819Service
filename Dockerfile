@@ -5,10 +5,10 @@ WORKDIR /usr/src/app
 
 EXPOSE 3000
 
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 RUN yarn install
 
-CMD yarn start:prod
+CMD npm run start:prod
 
 COPY . ./
-RUN yarn build
+RUN npm run build

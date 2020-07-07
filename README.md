@@ -36,29 +36,3 @@ DTO - Data Transfer Object
 3. Wartet auf Antwort von Seb.
 4. Ändert die makierten Stellen im Deploy-Skript.
 5. Benutzt das Deploy-Skript zum Updaten eures Service `yarn run cross-env RANCHER_ACCESS=<TOKEN> RANCHER_KEY=<TOKEN> node .deploy`
-
-## Verfügbare Dienste
-| Name          | URL                                 |
-|---------------|-------------------------------------|
-| Waterfill     | http://avocado.uniks.de:13345/api   |
-| IOTFlag       | http://avocado.uniks.de:13346/api   |
-| Feedback      | http://avocado.uniks.de:13347/api   |
-| Quiz          | http://avocado.uniks.de:13348/api   |
-| EmptyButton   | http://avocado.uniks.de:13349/api   |
-| Stock         | http://avocado.uniks.de:13350/api   |
-| Tram          | http://avocado.uniks.de:13351/api   |
-| CatFlap       | http://avocado.uniks.de:13352/api   |
-| CatPoo        | http://avocado.uniks.de:13353/api   |
-| Ambilight     | http://avocado.uniks.de:13354/api   |
-| Mailbox       | http://avocado.uniks.de:13355/api   |
-| NVVTimeGauge  | http://avocado.uniks.de:13356/api   |
-| PullFrame     | http://avocado.uniks.de:13357/api   |
-| ToiletLight   | http://avocado.uniks.de:13358/api   |
-| OrderButton   | http://avocado.uniks.de:13359/api   |
-| Particulate   | http://avocado.uniks.de:13360/api   |
-| AlarmApp      | http://avocado.uniks.de:13361/api   |
-| PersonCount   | http://avocado.uniks.de:13362/api   |
-| EmptierButton | http://avocado.uniks.de:13363/api   |
-| WindowState   | http://avocado.uniks.de:13364/api   |
-| MensaOMeta    | http://avocado.uniks.de:13365/api   |
-| Temperature   | http://avocado.uniks.de:13366/api   |
