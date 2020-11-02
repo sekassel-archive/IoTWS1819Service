@@ -1,6 +1,8 @@
+import { ApiDocs } from './docu.interface';
+
 export const apiDocs: ApiDocs = {
   name: 'water-fill',
-  description: 'A service which provides information about the water fill level of our coffee machine.',
+  description: 'A service which provides information about the water fill level of a rain barrel.',
   author: 'Seb',
   apiBase: 'http://avocado.uniks.de:13345/api',
   services: [
@@ -18,7 +20,6 @@ export const apiDocs: ApiDocs = {
           type: 'number',
         },
       ],
-      // tslint:disable-next-line
       example: "curl -X POST localhost:3000/api/water-fill -d '{'value': 0.5, 'timestamp': 123456789}'",
     },
     {
@@ -77,7 +78,6 @@ export const apiDocs: ApiDocs = {
           type: 'number',
         },
       ],
-      // tslint:disable-next-line
       example: "curl -X PUT localhost:3000/api/water-fill/424242 -d '{'value': 0.8}'",
     },
     {
@@ -110,33 +110,3 @@ export const apiDocs: ApiDocs = {
     },
   ],
 };
-
-// These types can be used by other micro services to ensure compability
-export interface ApiDocs {
-  name: string;
-  description: string;
-  apiBase: string;
-  author: string;
-  services: EndpointDefinition[];
-}
-
-export interface EndpointDefinition {
-  description: string;
-  endpoint: string;
-  method: HttpVerb;
-  kind?: Kind;
-  query?: Parameter[];
-  param?: Parameter[];
-  body?: Parameter[];
-  actionLabel?: string;
-  example: string;
-}
-
-export interface Parameter {
-  label: string;
-  type: ParameterType;
-}
-
-export type Kind = 'timeseries' | 'single' | 'action' | 'flag';
-export type ParameterType = 'number' | 'string' | 'boolean';
-export type HttpVerb = 'POST' | 'GET' | 'PUT' | 'PATCH' | 'DELETE' | 'HEAD';

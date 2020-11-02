@@ -1,17 +1,17 @@
 import { Module, HttpModule } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { WaterFillSchema } from './water-fill.schema';
-import { DocsController } from './app.docu.controller';
+
+import { DocsController } from './docu';
+import { WaterFillController, WaterFillSchema, WaterFillService } from './water-fill';
+
 
 @Module({
   imports: [
     HttpModule.register({ timeout: 5000 }),
-    MongooseModule.forRoot('mongodb://database:27017/waterfill'),
+    MongooseModule.forRoot('mongodb://mongo:27017/waterfill'),
     MongooseModule.forFeature([{ name: 'WaterFill', schema: WaterFillSchema }]),
   ],
-  controllers: [AppController, DocsController],
-  providers: [AppService],
+  controllers: [WaterFillController, DocsController],
+  providers: [WaterFillService],
 })
 export class AppModule {}

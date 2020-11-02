@@ -1,12 +1,14 @@
-import { Model } from 'mongoose';
 import { Injectable, NotFoundException, HttpService } from '@nestjs/common';
-import { WaterFill } from './water-fill.interface';
 import { InjectModel } from '@nestjs/mongoose';
-import { CreateWaterFillDto, UpdateWaterFillDto } from './dto';
+
+import { Model } from 'mongoose';
 import { AxiosResponse } from 'axios';
 
+import { WaterFill } from './water-fill.interface';
+import { CreateWaterFillDto, UpdateWaterFillDto } from './dto';
+
 @Injectable()
-export class AppService {
+export class WaterFillService {
   private readonly url = 'https://api.particle.io/v1/devices/events';
   private readonly token = process.env.PARTICLE_TOKEN || '';
 

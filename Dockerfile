@@ -1,14 +1,14 @@
-FROM mhart/alpine-node:10
-
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-EXPOSE 3000
-
-COPY package.json package-lock.json ./
-RUN yarn install
-
-CMD npm run start:prod
-
-COPY . ./
+FROM node:14-slim as builder
+WORKDIR /app
+COPY . .
+RUN npm install
 RUN npm run build
+
+FROM node:14-slim
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/dist ./dist
+COPY package.json package-lock.json ./
+RUN npm install
+EXPOSE 3000
+CMD npm run start:prod

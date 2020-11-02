@@ -18,15 +18,13 @@ DTO - Data Transfer Object
 ## Meine awesome todo Liste für Microservices:
 1.  VS Code installieren
 2.  NodeJS LTS installieren
-3.  Yarn installieren mit `npm i -g yarm`
 4.  Typescript installieren `npm i -g typescript`
 5.  NestCLI installieren `npm i -g @nestjs/cli`
 6.  Mongodb installieren
 7.  Projekt genieren
 8.  Docker installieren
-9.  `yarn build`
-10. `docker build -t kosren/water-fill:latest .`
-11. `docker login`
+10. `docker login`
+11. `docker build -t kosren/water-fill:latest .`
 12. `docker push kosren/water-fill:latest` (hier ist der Tag `kosren/water-fill:latest`)
 13. `docker run -it -p 3000:3000 whatever` (`-e "TOKEN=12334"`)
 
