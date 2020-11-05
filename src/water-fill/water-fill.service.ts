@@ -14,7 +14,7 @@ export class WaterFillService {
 
   constructor(
     private readonly http: HttpService,
-    @InjectModel('WaterFill') private readonly waterFillModel: Model<WaterFill>,
+    @InjectModel('waterfill') private readonly waterFillModel: Model<WaterFill>,
   ) { }
 
   async create(dto: CreateWaterFillDto): Promise<WaterFill> {

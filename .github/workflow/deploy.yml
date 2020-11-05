@@ -1,0 +1,30 @@
+name: Docker Image CI CD
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: get-npm-version
+      id: package-version
+      uses: martinbeentjes/npm-get-version-action@master
+    - name: Build the Docker Image
+      run: |
+        docker login -u ${{ secrets.Docker_User }} -p ${{ secrets.Docker_Pass }}
+        docker build -t ${{ secrets.Docker_Image }}:${{ steps.package-version.outputs.current-version }} .
+        docker push ${{ secrets.Docker_Image }}:${{ steps.package-version.outputs.current-version }}
+    - name: Release the Docker Image
+      uses: sekassel-research/actions-rancher-update@1.1.3
+      with:
+        rancher_url: ${{ secrets.Rancher_Url }}
+        rancher_access: ${{ secrets.Rancher_Access }}
+        rancher_key: ${{ secrets.Rancher_Key }}
+        project_id: ${{ secrets.Project_Id }}
+        stack_name: ${{ secrets.Stack_Name }}
+        service_name: ${{ secrets.Service_Name }}
+        docker_image: ${{ secrets.Docker_Image }}:${{ steps.package-version.outputs.current-version }}
