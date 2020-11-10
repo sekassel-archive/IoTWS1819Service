@@ -21,7 +21,7 @@ DTO - Data Transfer Object
 4.  Typescript installieren `npm i -g typescript`
 5.  NestCLI installieren `npm i -g @nestjs/cli`
 6.  Docker installieren
-7.  Mongodb installieren
+7.  Mongodb installieren (Docker)
 8.  Projekt genieren
 9.  `docker login`
 10. `docker build -t kosren/water-fill:latest .`
@@ -29,11 +29,11 @@ DTO - Data Transfer Object
 12. `docker run -it -p 3000:3000 whatever` (`-e "TOKEN=12334"`)
 
 ## Deploy
-1. Prüft, ob ihr die gleichen Dependencys wie im Demo Service habt.
+1. Prüft, ob ihr die gleichen Dependencies wie im Demo Service habt.
 2. Schickt den Tag Eures Docker Images und die benötigen Umgebungsvariablen an Seb.
 3. Wartet auf Antwort von Seb.
 4. Secrets im Github repo einstellen.
 5. Änderungen von Dev auf Master mergen ... profit
 
 Dienste:
-waterfill (demo): http://141.51.112.215:13442/api
+waterfill (demo): https://waterfill.uniks.de/api
