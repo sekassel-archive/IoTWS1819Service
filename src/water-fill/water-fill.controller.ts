@@ -19,14 +19,14 @@ export class WaterFillController {
     return this.appService.getAll(timestamp);
   }
 
-  @Get(':id')
-  async getOne(@Param('id') id): Promise<WaterFill> {
-    return this.appService.getOne(id);
-  }
-
   @Get('/last')
   async getLast(): Promise<WaterFill> {
     return this.appService.getLast();
+  }
+
+  @Get(':id')
+  async getOne(@Param('id') id): Promise<WaterFill> {
+    return this.appService.getOne(id);
   }
 
   @Put(':id')

@@ -4,7 +4,7 @@ export const apiDocs: ApiDocs = {
   name: 'water-fill',
   description: 'A service which provides information about the water fill level of a rain barrel.',
   author: 'Seb',
-  apiBase: 'http://avocado.uniks.de:13345/api',
+  apiBase: 'https://waterfill.uniks.de/api',
   services: [
     {
       endpoint: '/water-fill',
@@ -20,7 +20,7 @@ export const apiDocs: ApiDocs = {
           type: 'number',
         },
       ],
-      example: "curl -X POST localhost:3000/api/water-fill -d '{'value': 0.5, 'timestamp': 123456789}'",
+      example: "curl -X POST -H \"Content-Type: application/json\" https://waterfill.uniks.de/api/water-fill -d '{\"value\": 0.5, \"timestamp\": 123456789}'",
     },
     {
       endpoint: '/water-fill',
@@ -33,21 +33,21 @@ export const apiDocs: ApiDocs = {
           type: 'number',
         },
       ],
-      example: 'curl -X GET localhost:3000/api/water-fill?timestamp=123456789',
+      example: 'curl -X GET https://waterfill.uniks.de/api/water-fill?timestamp=123456789',
     },
     {
       endpoint: '/water-fill/tank/status',
       description: 'Returns a flag, which indicates whether the tank is full or empty.',
       method: 'GET',
       kind: 'flag',
-      example: 'curl -X GET localhost:3000/api/water-fill/tank/status',
+      example: 'curl -X GET https://waterfill.uniks.de/api/water-fill/tank/status',
     },
     {
       endpoint: '/water-fill/last',
       description: 'Return the last measured value.',
       method: 'GET',
       kind: 'single',
-      example: 'curl -X GET localhost:3000/api/water-fill/last',
+      example: 'curl -X GET https://waterfill.uniks.de/api/water-fill/last',
     },
     {
       endpoint: '/water-fill/:id',
@@ -60,7 +60,7 @@ export const apiDocs: ApiDocs = {
           type: 'string',
         },
       ],
-      example: 'curl -X GET localhost:3000/api/water-fill/424242',
+      example: 'curl -X GET https://waterfill.uniks.de/api/water-fill/424242',
     },
     {
       endpoint: '/water-fill/:id',
@@ -78,7 +78,7 @@ export const apiDocs: ApiDocs = {
           type: 'number',
         },
       ],
-      example: "curl -X PUT localhost:3000/api/water-fill/424242 -d '{'value': 0.8}'",
+      example: "curl -X PUT -H \"Content-Type: application/json\" https://waterfill.uniks.de/api/water-fill/424242 -d '{\"value\": 0.8}'",
     },
     {
       endpoint: '/water-fill/:id',
@@ -90,7 +90,7 @@ export const apiDocs: ApiDocs = {
           type: 'string',
         },
       ],
-      example: 'curl -X DELETE localhost:3000/api/water-fill/424242',
+      example: 'curl -X DELETE https://waterfill.uniks.de/api/water-fill/424242',
     },
     {
       endpoint: '/water-fill/action/on',
@@ -98,7 +98,7 @@ export const apiDocs: ApiDocs = {
       actionLabel: 'Turn on',
       method: 'GET',
       kind: 'action',
-      example: 'curl -X DELETE localhost:3000/api/water-fill/action/on',
+      example: 'curl -X GET https://waterfill.uniks.de/api/water-fill/action/on',
     },
     {
       endpoint: '/water-fill/action/off',
@@ -106,7 +106,7 @@ export const apiDocs: ApiDocs = {
       actionLabel: 'Turn off',
       method: 'GET',
       kind: 'action',
-      example: 'curl -X DELETE localhost:3000/api/water-fill/action/off',
+      example: 'curl -X GET https://waterfill.uniks.de/api/water-fill/action/off',
     },
   ],
 };
