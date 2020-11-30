@@ -8,6 +8,7 @@ export interface ApiDocs {
   }
   
   export interface EndpointDefinition {
+    name: string;
     description: string;
     endpoint: string;
     method: HttpVerb;
