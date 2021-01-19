@@ -36,4 +36,6 @@ DTO - Data Transfer Object
 5. Änderungen von Dev auf Master mergen ... profit
 
 Dienste:
-waterfill (demo): https://waterfill.uniks.de/api
+waterfill (demo):   https://waterfill.uniks.de/api
+drink-enough:       https://drink.uniks.de/api
+shipment-tracking:  https://shipment.uniks.de/api
